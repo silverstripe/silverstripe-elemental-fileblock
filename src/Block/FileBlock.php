@@ -40,6 +40,21 @@ class FileBlock extends BaseElement
     }
 
     /**
+     * Return file title and thumbnail for summary section of ElementEditor
+     *
+     * @return array
+     */
+    public function getBlockSchema()
+    {
+        $blockSchema = parent::getBlockSchema();
+        if ($this->File() && $this->File()->exists() && $this->File()->getIsImage()) {
+            $blockSchema["fileURL"] = $this->File()->CMSThumbnail()->getURL();
+            $blockSchema["fileTitle"] = $this->File()->getTitle();
+        }
+        return $blockSchema;
+    }
+
+    /**
      * Return a thumbnail of the file, if it's an image. Used in GridField preview summaries.
      *
      * @return DBHTMLText
