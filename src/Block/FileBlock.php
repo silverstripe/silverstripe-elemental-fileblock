@@ -44,12 +44,12 @@ class FileBlock extends BaseElement
      *
      * @return array
      */
-    public function getBlockSchema()
+    protected function provideBlockSchema()
     {
-        $blockSchema = parent::getBlockSchema();
+        $blockSchema = parent::provideBlockSchema();
         if ($this->File() && $this->File()->exists() && $this->File()->getIsImage()) {
-            $blockSchema["fileURL"] = $this->File()->CMSThumbnail()->getURL();
-            $blockSchema["fileTitle"] = $this->File()->getTitle();
+            $blockSchema['fileURL'] = $this->File()->CMSThumbnail()->getURL();
+            $blockSchema['fileTitle'] = $this->File()->getTitle();
         }
         return $blockSchema;
     }
