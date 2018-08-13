@@ -42,6 +42,7 @@ class FileBlockTest extends SapphireTest
 
     public function testGetSummaryReturnsThumbnailAndFileTitle()
     {
+        /** @var FileBlock $block */
         $block = $this->objFromFixture(FileBlock::class, 'with_image');
 
         $summary = $block->getSummary();
@@ -52,6 +53,7 @@ class FileBlockTest extends SapphireTest
 
     public function testGetSummaryReturnsFileTitleWhenLinkedToFile()
     {
+        /** @var FileBlock $block */
         $block = $this->objFromFixture(FileBlock::class, 'with_file');
 
         $summary = $block->getSummary();
@@ -59,5 +61,16 @@ class FileBlockTest extends SapphireTest
         $this->assertContains('elemental-preview__thumbnail-image', $summary);
         $this->assertContains('elemental-preview__thumbnail-image--placeholder', $summary);
         $this->assertContains('Some file', $summary);
+    }
+
+    public function testImageIsAddedToSchemaData()
+    {
+        /** @var FileBlock $block */
+        $block = $this->objFromFixture(FileBlock::class, 'with_image');
+
+        $schemaData = $block->getBlockSchema();
+
+        $this->assertNotEmpty($schemaData['fileURL'], 'File URL is added to schema');
+        $this->assertNotEmpty($schemaData['fileTitle'], 'File title is added to schema');
     }
 }
