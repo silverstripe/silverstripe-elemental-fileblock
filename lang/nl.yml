@@ -1,0 +1,9 @@
+nl:
+  SilverStripe\ElementalFileBlock\Block\FileBlock:
+    BlockType: Bestand
+    PLURALNAME: bestanden
+    PLURALS:
+      one: Een bestand
+      other: '{count} bestanden'
+
+    SINGULARNAME: bestand
