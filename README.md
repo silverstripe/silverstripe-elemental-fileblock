@@ -11,15 +11,15 @@ This repository contains a "file block" for the [silverstripe-elemental](https:/
 Install using Composer:
 
 ```
-composer require silverstripe/elemental-fileblock 1.x-dev
+composer require silverstripe/elemental-fileblock ^2.0
 ```
 
 Once complete, run `dev/build` from your browser, or command line via `vendor/bin/sake dev/build`.
 
 ## Requirements
 
-* SilverStripe CMS ^4.2
-* Elemental ^3.0
+* SilverStripe CMS ^4.3
+* Elemental ^4.0
 
 ## Translations
 
