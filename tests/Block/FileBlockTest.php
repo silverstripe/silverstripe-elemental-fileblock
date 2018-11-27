@@ -2,6 +2,7 @@
 
 namespace SilverStripe\ElementalFileBlock\Tests\Block;
 
+use SilverStripe\AssetAdmin\Forms\UploadField;
 use SilverStripe\Assets\File;
 use SilverStripe\Assets\Folder;
 use SilverStripe\Assets\Image;
@@ -72,5 +73,17 @@ class FileBlockTest extends SapphireTest
 
         $this->assertNotEmpty($schemaData['fileURL'], 'File URL is added to schema');
         $this->assertNotEmpty($schemaData['fileTitle'], 'File title is added to schema');
+    }
+
+    public function testUploadFieldShouldNotAllowMultipleFiles()
+    {
+        /** @var FileBlock $block */
+        $block = $this->objFromFixture(FileBlock::class, 'with_image');
+
+        /** @var UploadField $field */
+        $field = $block->getCMSFields()->fieldByName('Root.Main.File');
+
+        $this->assertInstanceOf(UploadField::class, $field, 'Field should be an UploadField');
+        $this->assertFalse($field->getIsMultiUpload(), 'Field should not allow multiple uploads');
     }
 }

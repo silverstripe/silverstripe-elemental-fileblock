@@ -3,9 +3,11 @@
 namespace SilverStripe\ElementalFileBlock\Block;
 
 use DNADesign\Elemental\Models\BaseElement;
+use SilverStripe\AssetAdmin\Forms\UploadField;
 use SilverStripe\Assets\File;
 use SilverStripe\Assets\Image_Backend;
 use SilverStripe\Core\Manifest\ModuleResourceLoader;
+use SilverStripe\Forms\FieldList;
 use SilverStripe\ORM\FieldType\DBHTMLText;
 
 class FileBlock extends BaseElement
@@ -25,6 +27,17 @@ class FileBlock extends BaseElement
     private static $icon = 'font-icon-block-file';
 
     private static $table_name = 'S_EB_FileBlock';
+
+    public function getCMSFields()
+    {
+        $this->beforeUpdateCMSFields(function (FieldList $fields) {
+            /** @var UploadField $uploadField */
+            $uploadField = $fields->fieldByName('Root.Main.File');
+            $uploadField->setIsMultiUpload(false);
+        });
+
+        return parent::getCMSFields();
+    }
 
     public function getType()
     {
