@@ -3,7 +3,6 @@ en:
     BlockType: File
     PLURALNAME: files
     PLURALS:
-      one: A file
+      one: 'A file'
       other: '{count} files'
-
     SINGULARNAME: file
