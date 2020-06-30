@@ -3,7 +3,6 @@ nl:
     BlockType: Bestand
     PLURALNAME: bestanden
     PLURALS:
-      one: Een bestand
+      one: 'Een bestand'
       other: '{count} bestanden'
-
     SINGULARNAME: bestand
