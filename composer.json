@@ -20,11 +20,6 @@
         "phpunit/phpunit": "^5.7",
         "squizlabs/php_codesniffer": "^3.0"
     },
-    "extra": {
-        "branch-alias": {
-            "dev-master": "2.x-dev"
-        }
-    },
     "autoload": {
         "psr-4": {
             "SilverStripe\\ElementalFileBlock\\": "src/",
