@@ -20,9 +20,9 @@ class FileBlock extends BaseElement
         'File',
     ];
 
-    private static $singular_name = 'file';
+    private static $singular_name = 'file block';
 
-    private static $plural_name = 'files';
+    private static $plural_name = 'file blocks';
 
     private static $icon = 'font-icon-block-file';
 
