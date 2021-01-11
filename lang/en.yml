@@ -1,8 +1,8 @@
 en:
   SilverStripe\ElementalFileBlock\Block\FileBlock:
     BlockType: File
-    PLURALNAME: file blocks
+    PLURALNAME: 'file blocks'
     PLURALS:
       one: 'A file block'
       other: '{count} file blocks'
-    SINGULARNAME: file block
+    SINGULARNAME: 'file block'
