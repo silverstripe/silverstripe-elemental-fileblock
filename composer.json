@@ -24,7 +24,8 @@
     "autoload": {
         "psr-4": {
             "SilverStripe\\ElementalFileBlock\\": "src/",
-            "SilverStripe\\ElementalFileBlock\\Tests\\": "tests/"
+            "SilverStripe\\ElementalFileBlock\\Tests\\": "tests/",
+            "SilverStripe\\ElementalFileBlock\\Tests\\Behat\\Context\\": "tests/behat/src/"
         }
     }
 }
