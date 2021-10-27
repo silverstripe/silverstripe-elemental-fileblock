@@ -14,7 +14,7 @@ class FileBlockTest extends SapphireTest
 {
     protected static $fixture_file = 'FileBlockTest.yml';
 
-    protected function setUp()
+    protected function setUp(): void
     {
         parent::setUp();
         TestAssetStore::activate('FileBlockTest');
@@ -29,7 +29,7 @@ class FileBlockTest extends SapphireTest
         }
     }
 
-    protected function tearDown()
+    protected function tearDown(): void
     {
         TestAssetStore::reset();
         parent::tearDown();
@@ -48,8 +48,8 @@ class FileBlockTest extends SapphireTest
 
         $summary = $block->getSummary();
 
-        $this->assertContains('elemental-preview__thumbnail-image', $summary);
-        $this->assertContains('Some image', $summary);
+        $this->assertStringContainsString('elemental-preview__thumbnail-image', $summary);
+        $this->assertStringContainsString('Some image', $summary);
     }
 
     public function testGetSummaryReturnsFileTitleWhenLinkedToFile()
@@ -59,9 +59,9 @@ class FileBlockTest extends SapphireTest
 
         $summary = $block->getSummary();
 
-        $this->assertContains('elemental-preview__thumbnail-image', $summary);
-        $this->assertContains('elemental-preview__thumbnail-image--placeholder', $summary);
-        $this->assertContains('Some file', $summary);
+        $this->assertStringContainsString('elemental-preview__thumbnail-image', $summary);
+        $this->assertStringContainsString('elemental-preview__thumbnail-image--placeholder', $summary);
+        $this->assertStringContainsString('Some file', $summary);
     }
 
     public function testImageIsAddedToSchemaData()
