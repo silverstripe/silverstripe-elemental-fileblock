@@ -11,7 +11,7 @@
     "minimum-stability": "dev",
     "prefer-stable": true,
     "require": {
-        "php": "^7.3 || ^8.0",
+        "php": "^7.4 || ^8.0",
         "silverstripe/framework": "^4.10",
         "silverstripe/vendor-plugin": "^1.0",
         "dnadesign/silverstripe-elemental": "^4.8",
