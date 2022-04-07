@@ -5,6 +5,7 @@ default:
         - "%paths.modules.elemental-fileblock%/tests/behat/features"
       contexts:
         - SilverStripe\Admin\Tests\Behat\Context\AdminContext
+        - SilverStripe\AssetAdmin\Tests\Behat\Context\FeatureContext
         - SilverStripe\BehatExtension\Context\BasicContext
         - SilverStripe\BehatExtension\Context\EmailContext
         - SilverStripe\BehatExtension\Context\LoginContext
