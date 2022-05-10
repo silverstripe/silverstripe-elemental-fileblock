@@ -1,8 +1,10 @@
-nl:
+sl:
   SilverStripe\ElementalFileBlock\Block\FileBlock:
-    BlockType: Bestand
+    BlockType: Datoteka
     PLURALNAME: ''
     PLURALS:
       one: ''
+      two: ''
+      few: ''
       other: ''
     SINGULARNAME: ''

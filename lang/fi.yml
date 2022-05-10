@@ -1,8 +1,8 @@
 fi:
   SilverStripe\ElementalFileBlock\Block\FileBlock:
     BlockType: Tiedosto
-    PLURALNAME: tiedostot
+    PLURALNAME: ''
     PLURALS:
-      one: Tiedosto
-      other: '{count} tiedostoa'
-    SINGULARNAME: tiedosto
+      one: ''
+      other: ''
+    SINGULARNAME: ''
