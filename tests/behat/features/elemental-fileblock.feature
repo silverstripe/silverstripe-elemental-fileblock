@@ -4,13 +4,13 @@ Feature: Use elemental fileblock
 
   Background:
     Given I add an extension "DNADesign\Elemental\Extensions\ElementalPageExtension" to the "Page" class
-    And the "group" "EDITOR group" has permissions "CMS_ACCESS_LeftAndMain"
+    And the "group" "EDITOR" has permissions "Access to 'Pages' section" and "Access to 'Files' section"
     And a "page" "My page"
     And a "folder" "assets/Uploads"
     And a "file" "assets/Uploads/test1.pdf"
 
   Scenario: Operate elemental fileblocks
-    Given I am logged in with "EDITOR" permissions
+    Given I am logged in as a member of "EDITOR" group
     When I go to "/admin/pages"
     And I follow "My page"
 
