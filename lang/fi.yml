@@ -1,8 +1,3 @@
 fi:
   SilverStripe\ElementalFileBlock\Block\FileBlock:
     BlockType: Tiedosto
-    PLURALNAME: ''
-    PLURALS:
-      one: ''
-      other: ''
-    SINGULARNAME: ''
