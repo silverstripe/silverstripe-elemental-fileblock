@@ -6,3 +6,4 @@ en:
       one: 'A file block'
       other: '{count} file blocks'
     SINGULARNAME: 'file block'
+    has_one_File: File
