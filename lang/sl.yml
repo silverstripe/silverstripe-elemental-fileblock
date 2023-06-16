@@ -1,3 +1,4 @@
 sl:
   SilverStripe\ElementalFileBlock\Block\FileBlock:
     BlockType: Datoteka
+    has_one_File: Datoteka

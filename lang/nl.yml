@@ -1,3 +1,4 @@
 nl:
   SilverStripe\ElementalFileBlock\Block\FileBlock:
     BlockType: Bestand
+    has_one_File: Bestand
