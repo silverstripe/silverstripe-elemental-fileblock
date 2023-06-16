@@ -1,3 +1,4 @@
 fi:
   SilverStripe\ElementalFileBlock\Block\FileBlock:
     BlockType: Tiedosto
+    has_one_File: Tiedosto
