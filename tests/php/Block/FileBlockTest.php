@@ -41,27 +41,13 @@ class FileBlockTest extends SapphireTest
         $this->assertSame('', $block->getSummary());
     }
 
-    public function testGetSummaryReturnsThumbnailAndFileTitle()
-    {
-        /** @var FileBlock $block */
-        $block = $this->objFromFixture(FileBlock::class, 'with_image');
-
-        $summary = $block->getSummary();
-
-        $this->assertStringContainsString('elemental-preview__thumbnail-image', $summary);
-        $this->assertStringContainsString('Some image', $summary);
-    }
-
     public function testGetSummaryReturnsFileTitleWhenLinkedToFile()
     {
         /** @var FileBlock $block */
         $block = $this->objFromFixture(FileBlock::class, 'with_file');
 
         $summary = $block->getSummary();
-
-        $this->assertStringContainsString('elemental-preview__thumbnail-image', $summary);
-        $this->assertStringContainsString('elemental-preview__thumbnail-image--placeholder', $summary);
-        $this->assertStringContainsString('Some file', $summary);
+        $this->assertEquals('Some file', $summary);
     }
 
     public function testImageIsAddedToSchemaData()
@@ -72,6 +58,20 @@ class FileBlockTest extends SapphireTest
         $schemaData = $block->getBlockSchema();
 
         $this->assertNotEmpty($schemaData['fileURL'], 'File URL is added to schema');
+        $this->assertStringContainsString('ss-logo', $schemaData['fileURL'], 'File URL contains image name');
+        $this->assertNotEmpty($schemaData['fileTitle'], 'File title is added to schema');
+
+        /** @var FileBlock $block */
+        $block2 = $this->objFromFixture(FileBlock::class, 'with_file');
+
+        $schemaData = $block2->getBlockSchema();
+
+        $this->assertNotEmpty($schemaData['fileURL'], 'File URL is added to schema');
+        $this->assertStringContainsString(
+            'document_92.png',
+            $schemaData['fileURL'],
+            'File URL contains placeholder file name'
+        );
         $this->assertNotEmpty($schemaData['fileTitle'], 'File title is added to schema');
     }
 
