@@ -47,7 +47,7 @@ class FileBlock extends BaseElement
     public function getSummary()
     {
         if ($this->File() && $this->File()->exists()) {
-            return $this->getSummaryThumbnail() . $this->File()->Title;
+            return $this->File()->Title;
         }
         return '';
     }
@@ -60,10 +60,18 @@ class FileBlock extends BaseElement
     protected function provideBlockSchema()
     {
         $blockSchema = parent::provideBlockSchema();
-        if ($this->File() && $this->File()->exists() && $this->File()->getIsImage()) {
-            $blockSchema['fileURL'] = $this->File()->CMSThumbnail()->getURL();
+        if ($this->File() && $this->File()->exists()) {
             $blockSchema['fileTitle'] = $this->File()->getTitle();
+
+            if ($this->File()->getIsImage()) {
+                $blockSchema['fileURL'] = $this->File()->CMSThumbnail()->getURL();
+            } else {
+                $blockSchema['fileURL'] = ModuleResourceLoader::resourceURL(
+                    'silverstripe/framework:client/images/app_icons/document_92.png'
+                );
+            }
         }
+
         return $blockSchema;
     }
 

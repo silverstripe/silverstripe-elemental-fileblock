@@ -32,6 +32,9 @@ Feature: Use elemental fileblock
     And I click on the ".gallery-item__thumbnail" element
     And I press the "Insert" button
     And I press the "Publish" button
+    And I wait for 1 seconds
+    And I should see a ".element-editor-summary__thumbnail-image" element
+    And I should see "test1" in the ".element-editor-summary__content" element
 
     # Assert that it saved
     And I click on the ".element-editor-header__title" element
