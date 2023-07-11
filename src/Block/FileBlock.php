@@ -7,6 +7,7 @@ use SilverStripe\AssetAdmin\Forms\UploadField;
 use SilverStripe\Assets\File;
 use SilverStripe\Assets\Image_Backend;
 use SilverStripe\Core\Manifest\ModuleResourceLoader;
+use SilverStripe\Dev\Deprecation;
 use SilverStripe\Forms\FieldList;
 use SilverStripe\ORM\FieldType\DBHTMLText;
 
@@ -71,9 +72,12 @@ class FileBlock extends BaseElement
      * Return a thumbnail of the file, if it's an image. Used in GridField preview summaries.
      *
      * @return DBHTMLText
+     * @deprecated 3.1.0 Will be removed without equivalent functionality to replace it
      */
     public function getSummaryThumbnail()
     {
+        Deprecation::notice('3.1.0', 'Will be removed without equivalent functionality to replace it.');
+        
         $data = [];
 
         if ($this->File() && $this->File()->exists()) {
