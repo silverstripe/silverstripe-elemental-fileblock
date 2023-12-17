@@ -11,6 +11,9 @@ use SilverStripe\Dev\Deprecation;
 use SilverStripe\Forms\FieldList;
 use SilverStripe\ORM\FieldType\DBHTMLText;
 
+/**
+ * @method File File()
+ */
 class FileBlock extends BaseElement
 {
     private static $has_one = [
