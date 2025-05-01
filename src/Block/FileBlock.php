@@ -83,12 +83,15 @@ class FileBlock extends BaseElement
      * Return a thumbnail of the file, if it's an image. Used in GridField preview summaries.
      *
      * @return DBHTMLText
-     * @deprecated 3.1.0 Will be removed without equivalent functionality to replace it
+     * @deprecated 3.1.0 Will be removed without equivalent functionality to replace it in a future major release
      */
     public function getSummaryThumbnail()
     {
-        Deprecation::notice('3.1.0', 'Will be removed without equivalent functionality to replace it.');
-        
+        Deprecation::notice(
+            '3.1.0',
+            'Will be removed without equivalent functionality to replace it in a future major release.'
+        );
+
         $data = [];
 
         if ($this->File() && $this->File()->exists()) {
